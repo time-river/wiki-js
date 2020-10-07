@@ -2,9 +2,9 @@
 title: Home
 description: 
 published: true
-date: 2020-10-07T10:59:25.888Z
+date: 2020-10-07T12:01:29.591Z
 tags: 
-editor: undefined
+editor: markdown
 dateCreated: 2020-10-05T10:34:30.184Z
 ---
 
@@ -14,6 +14,10 @@ dateCreated: 2020-10-05T10:34:30.184Z
 
 ## 效率工具
 
+- GDB配置
+  - terminal-based: [gdb-dashboard](https://github.com/cyrus-and/gdb-dashboard)
+  - browser-based frontend：[gdbgui](https://github.com/cs01/gdbgui)
+  
 - [vim配置](https://github.com/time-river/vimrc/tree/main)
   - [知乎：如何在 Linux 下利用 Vim 搭建 C/C++ 开发环境?](https://www.zhihu.com/question/47691414/answer/373700711)
   - [知乎专栏：Vim 8 中 C/C++ 符号索引：GTags 篇](https://zhuanlan.zhihu.com/p/36279445)
