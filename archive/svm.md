@@ -2,9 +2,9 @@
 title: 支持向量机
 description: 
 published: true
-date: 2020-10-07T10:10:36.934Z
+date: 2020-10-07T10:10:41.011Z
 tags: 
-editor: markdown
+editor: undefined
 dateCreated: 2020-10-07T08:32:35.719Z
 ---
 
