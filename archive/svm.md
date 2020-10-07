@@ -2,9 +2,9 @@
 title: 支持向量机
 description: 
 published: true
-date: 2020-10-07T09:38:04.306Z
+date: 2020-10-07T10:10:36.934Z
 tags: 
-editor: undefined
+editor: markdown
 dateCreated: 2020-10-07T08:32:35.719Z
 ---
 
@@ -14,7 +14,7 @@ dateCreated: 2020-10-07T08:32:35.719Z
 # Overview
 在机器学习中，支持向量机（Support Vector Machine，SVM）是在分类与回归分析中分析数据的监督式学习模型与相关的学习算法。[1][1]从本质上来说是一种：**用一条线（方程）分类两种事物**。[2][2]其中，用于分类（Classification）的SVM被称为SVC，用于回归（Regression）的被称为SVR。
 
-![SVM Overview](/archieve/svm-overview.jpg "SVM Overview")
+![SVM Overview](/archive/svm-overview.jpg "SVM Overview")
 
 上图中，每一个圆形与正方形都代表一个样本数据。对SVC来说，SVM的任务是在两类样本数据中找到一条分界线（*超平面，hyperplane*），使得它到两边的*间隔（margin）*都最大。所谓支持向量机，分为两个部分：
 - *支持向量（Support Vector）*：简单来说，就是支持或支撑超平面上把两异类划分开来的超平面的向量点。在Maximum Margin上的这些训练样本点距离超平面最近，他们被成为支持向量。具体来说就是最终分类器的表达式中只含有这些支持向量的信息，与其他的训练样本点无关。两个异类支持向量到超平面的距离之和称之为间隔$\gamma$。
@@ -39,7 +39,7 @@ SVM是建立在统计学习理论的*VC维*理论和*结构风险*最小原理�
 # SVC
 给定训练样本集$D = {(\boldsymbol {x}_1, y_1), (\boldsymbol {x}_2, y_2), ..., (\boldsymbol {x}_m, y_m); y_i \in \{-1, +1 \}}$。
 
-![Hard Margin](/archieve/hard-margin.png "Hard Margin")
+![Hard Margin](/archive/hard-margin.png "Hard Margin")
 
 在样本空间中，超平面可通过如下的线性方程来描述（$\boldsymbol {w}$为空间法向量，决定超平面的方向；$b$为位移项，决定了超平面与原点之间的距离）：
 $$
@@ -147,7 +147,7 @@ $$
 
 ## 软间隔（Soft Margin）
 
-![Soft Margin](/archieve/soft-margin.png "Soft Margin")
+![Soft Margin](/archive/soft-margin.png "Soft Margin")
 
 假定训练样本在样本空间或特征空间中并**非线性可分**，缓解该问题的一个方法是允许SVM在一些样本上出错，因此引入了软间隔的概念。与硬间隔相比，它增加了*惩罚因子（Cost）*、*损失函数（Loss Function）*/*替代损失函数（Surrogate Loss Function）*/*松弛变量（Slack Variables）*。
 
@@ -186,7 +186,7 @@ $$
 ## 核技巧（Kernel Trick）
 # SVR
 
-![Support Vector Regression](/archieve/svr.png "Support Vector Regression")
+![Support Vector Regression](/archive/svr.png "Support Vector Regression")
 
 与SVC相比，支持向量回归（Support Vector Regression, SVR）必须容忍偏差。假设能容忍$f(\boldsymbol{x})$与$y$之间最多有$\epsilon$的偏差，即仅当$f(\boldsymbol{x})$与$y$之间差的绝对值大于$\epsilon$时才计算损失，这相当于以$f(\boldsymbol{x})$为中心，构建了一个宽度为$2\epsilon$的间隔带，若训练样本落入此间隔带，则被认为是被预测正确的。若引入松弛变量，它的原始问题解为：
 $$
