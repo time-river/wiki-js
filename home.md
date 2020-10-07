@@ -2,7 +2,7 @@
 title: Home
 description: 
 published: true
-date: 2020-10-07T13:01:45.607Z
+date: 2020-10-07T13:02:48.666Z
 tags: 
 editor: markdown
 dateCreated: 2020-10-05T10:34:30.184Z
@@ -11,8 +11,8 @@ dateCreated: 2020-10-05T10:34:30.184Z
 # Home
 
 > GitHub repo: [wiki-js](https://github.com/time-river/wiki-js)
-> site: [https://wiki.home.vvl.me:10443](https://wiki.home.vvl.me:10443)
-> mirror site: [https://wiki.vvl.me](https://wiki.home.vvl.me\:10443)
+> site: [wiki.home.vvl.me](https://wiki.home.vvl.me:10443)
+> mirror site: [wiki.vvl.me](https://wiki.home.vvl.me\:10443)
 
 ## 效率工具
 
