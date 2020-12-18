@@ -2,7 +2,7 @@
 title: eBPF
 description: 
 published: true
-date: 2020-12-17T16:29:12.041Z
+date: 2020-12-18T13:58:05.422Z
 tags: 
 editor: markdown
 dateCreated: 2020-12-17T15:36:22.454Z
@@ -28,3 +28,4 @@ dateCreated: 2020-12-17T15:36:22.454Z
 2014.11 [`0f8e4bd`](https://github.com/torvalds/linux/commit/0f8e4bd8a1fc8c4185f1630061d0a1f2d197a475#diff-44bbf34e69b69ec779122b4b90cd8f00437d4aa974ee9b6bbcf2d88b8b12ec6f) bpf: add hashtable type of eBPF maps
 
 2014.12 [`89aa075`](https://github.com/torvalds/linux/commit/89aa075832b0da4402acebd698d0411dcc82d03e) net: sock: allow eBPF programs to be attached to sockets
+  - [LWN.net: allow eBPF programs to be attached to sockets](https://lwn.net/Articles/623370/)
