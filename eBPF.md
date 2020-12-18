@@ -2,7 +2,7 @@
 title: eBPF
 description: 
 published: true
-date: 2020-12-18T14:05:55.059Z
+date: 2020-12-18T14:32:37.182Z
 tags: 
 editor: markdown
 dateCreated: 2020-12-17T15:36:22.454Z
@@ -35,3 +35,7 @@ dateCreated: 2020-12-17T15:36:22.454Z
 
 2015.03 [`9bac3d6`](https://github.com/torvalds/linux/commit/9bac3d6d548e5cc925570b263f35b70a00a00ffd) bpf: allow extended BPF programs access skb fields
   - [LWN.net: bpf: allow extended BPF programs access skb fields](https://lwn.net/Articles/636647/)
+
+2015.04 [`2541517`](https://github.com/torvalds/linux/commit/2541517c32be2531e0da59dfd7efc1ce844644f5) tracing, perf: Implement BPF programs attached to kprobes
+
+2015.06 [`ffeedaf`](https://github.com/torvalds/linux/commit/ffeedafbf0236f03aeb2e8db273b3e5ae5f5bc89) bpf: introduce current->pid, tgid, uid, gid, comm accessors
