@@ -2,7 +2,7 @@
 title: eBPF
 description: 
 published: true
-date: 2020-12-18T14:05:24.139Z
+date: 2020-12-18T14:05:55.059Z
 tags: 
 editor: markdown
 dateCreated: 2020-12-17T15:36:22.454Z
@@ -30,8 +30,8 @@ dateCreated: 2020-12-17T15:36:22.454Z
 2014.12 [`89aa075`](https://github.com/torvalds/linux/commit/89aa075832b0da4402acebd698d0411dcc82d03e) net: sock: allow eBPF programs to be attached to sockets
   - [LWN.net: allow eBPF programs to be attached to sockets](https://lwn.net/Articles/623370/)
   
+2015.03 [`03e69b5`](https://github.com/torvalds/linux/commit/03e69b508b6f7c51743055c9f61d1dfeadf4b635) ebpf: add prandom helper for packet sampling
+2015.03 [`c04167c`](https://github.com/torvalds/linux/commit/c04167ce2ca0ecaeaafef006cb0d65cf01b68e42) ebpf: add helper for obtaining current processor id
+
 2015.03 [`9bac3d6`](https://github.com/torvalds/linux/commit/9bac3d6d548e5cc925570b263f35b70a00a00ffd) bpf: allow extended BPF programs access skb fields
   - [LWN.net: bpf: allow extended BPF programs access skb fields](https://lwn.net/Articles/636647/)
-  
-2015.03 [`03e69b5`](https://github.com/torvalds/linux/commit/03e69b508b6f7c51743055c9f61d1dfeadf4b635) ebpf: add prandom helper for packet sampling
-2015.03 [``](https://github.com/torvalds/linux/commit/c04167ce2ca0ecaeaafef006cb0d65cf01b68e42) ebpf: add helper for obtaining current processor id
