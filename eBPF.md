@@ -2,7 +2,7 @@
 title: eBPF
 description: 
 published: true
-date: 2020-12-18T14:33:48.964Z
+date: 2020-12-19T08:48:04.486Z
 tags: 
 editor: markdown
 dateCreated: 2020-12-17T15:36:22.454Z
@@ -21,6 +21,7 @@ dateCreated: 2020-12-17T15:36:22.454Z
   
 ## History
 
+### kernel source
 2014.09 [`99c55f7`](https://github.com/torvalds/linux/commit/99c55f7d47c0dc6fc64729f37bf435abf43f4c60) bpf: introduce BPF syscall and maps 
   - [LWN.net: BPF syscall, maps, verifier, samples](https://lwn.net/Articles/603816/)
   
@@ -41,3 +42,7 @@ dateCreated: 2020-12-17T15:36:22.454Z
 2015.10 [`ea317b2`](https://github.com/torvalds/linux/commit/ea317b267e9d03a8241893aa176fba7661d07579) bpf: Add new bpf map type to store the pointer to struct perf_event
 
 2015.06 [`ffeedaf`](https://github.com/torvalds/linux/commit/ffeedafbf0236f03aeb2e8db273b3e5ae5f5bc89) bpf: introduce current->pid, tgid, uid, gid, comm accessors
+
+### libbpf source
+
+2019.06 [`abd29c9`](https://github.com/torvalds/linux/commit/abd29c9314595b1ee5ec6c61d7c49a497ffb30a3) libbpf: allow specifying map definitions using BTF
