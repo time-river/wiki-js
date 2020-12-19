@@ -2,7 +2,7 @@
 title: eBPF
 description: 
 published: true
-date: 2020-12-19T08:48:04.486Z
+date: 2020-12-19T09:08:33.382Z
 tags: 
 editor: markdown
 dateCreated: 2020-12-17T15:36:22.454Z
@@ -42,6 +42,8 @@ dateCreated: 2020-12-17T15:36:22.454Z
 2015.10 [`ea317b2`](https://github.com/torvalds/linux/commit/ea317b267e9d03a8241893aa176fba7661d07579) bpf: Add new bpf map type to store the pointer to struct perf_event
 
 2015.06 [`ffeedaf`](https://github.com/torvalds/linux/commit/ffeedafbf0236f03aeb2e8db273b3e5ae5f5bc89) bpf: introduce current->pid, tgid, uid, gid, comm accessors
+
+2015.08 [`04a22fa`](https://github.com/torvalds/linux/commit/04a22fae4cbc1f7d3f7471e9b36359f98bd3f043) tracing, perf: Implement BPF programs attached to uprobes
 
 ### libbpf source
 
