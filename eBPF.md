@@ -2,7 +2,7 @@
 title: eBPF
 description: 
 published: true
-date: 2020-12-20T11:37:09.043Z
+date: 2020-12-20T11:41:35.505Z
 tags: 
 editor: markdown
 dateCreated: 2020-12-17T15:36:22.454Z
@@ -507,7 +507,7 @@ dateCreated: 2020-12-17T15:36:22.454Z
       * Loadable BPF "Firmware" for vector drivers
 
 - KernelNewbies: Linux_5.6
-
+  * [6. Tracing, perf and BPF](https://kernelnewbies.org/Linux_5.6#Tracing.2C_perf_and_BPF)
 - KernelNewbies: Linux_5.7
 
 - KernelNewbies: Linux_5.8
