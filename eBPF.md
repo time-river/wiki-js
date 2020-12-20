@@ -2,7 +2,7 @@
 title: eBPF
 description: 
 published: true
-date: 2020-12-20T10:41:50.790Z
+date: 2020-12-20T11:23:20.457Z
 tags: 
 editor: markdown
 dateCreated: 2020-12-17T15:36:22.454Z
@@ -365,15 +365,128 @@ dateCreated: 2020-12-17T15:36:22.454Z
         - bpf: add support for BPF-to-BPF function calls
 
 - KernelNewbies: Linux_5.0
+  * [6. Tracing, perf and BPF](https://kernelnewbies.org/Linux_5.0#Tracing.2C_perf_and_BPF)
+    - BPF
+      * Support raw tracepoints in modules
+      * Add perf-based event notification for sock_ops. The eBPF kernel module can thus be designed to apply any desired filters to the bpf_sock_ops and trigger a perf-event notification based on the verdict from the filter. The uspace component can use these perf-event notifications to either read any state managed by the eBPF kernel module, or issue a TCP_INFO netlink call if desired
+      * Add support for mapinmap in libbpf, a helper for libbpf which would allow it to load map-in-map(`BPF_MAP_TYPE_ARRAY_OF_MAPS` and `BPF_MAP_TYPE_HASH_OF_MAPS`)
+      * Introduce bpf_line_info. It will be useful for introspection purpose
+      * Add func info support to the kernel so we can get better ksym's for bpf function calls. Basically, function call types are passed to kernel and the kernel extract function names from these types in order to contruct ksym for these functions
+      * Add `BPF_F_ANY_ALIGNMENT`, an "any alignment" flags to tell the verifier to forcefully disable it's alignment checks completely. It's needed by SPARC
+      * Support socket lookup in `CGROUP_SOCK_ADDR` progs
+      * Support of `BPF_ALU | BPF_ARSH`
+      * Add skb->tstamp r/w access from tc clsact and cg skb progs
+      * sockmap, metadata support for reporting size of msg
+      * Allow BPF read access to qdisc pkt_len
+      * bpftool
+        - Add loadall command
+        - Add pinmaps argument to the load/loadall
+        - Support loading flow dissector
+        - Add a command to dump the trace pipe
+        - Add an option to prevent auto-mount of bpffs, tracefs
+        - Add owner_prog_type and owner_jited to bpftool output
+        - Add `BPF_MAP_TYPE_QUEUE` and `BPF_MAP_TYPE_STACK` to bpftool-map
+
 - KernelNewbies: Linux_5.1
+  * [6. Tracing and perf](https://kernelnewbies.org/Linux_5.1#Tracing_and_perf)
+    - BPF
+      * Add Host Bandwidth Manager. Host Bandwidth Manager is a framework for limiting the bandwidth used by v2 cgroups. It consists of 1 BPF helper, a sample BPF program to limit egress bandwdith as well as a sample user program and script to simplify HBM testing
+      * Implements `BPF_LWT_ENCAP_IP` mode in `bpf_lwt_push_encap` BPF helper. It enables BPF programs (specifically, `BPF_PROG_TYPE_LWT_IN` and `BPF_PROG_TYPE_LWT_XMIT` prog types) to add IP encapsulation headers to packets (e.g. IP/GRE, GUE, IPIP)
+      * Add new jmp32 instructions. Current eBPF ISA has 32-bit sub-register and has defined a set of ALU32 instructions. However, there is no JMP32 instructions, the consequence is code-gen for 32-bit sub-registers is not efficient. For example, explicit sign-extension from 32-bit to 64-bit is needed for signed comparison
+      * Add `__sk_buff->sk`, `struct bpf_tcp_sock`, `BPF_FUNC_sk_fullsock` and `BPF_FUNC_tcp_sock`. Together, they provide a common way to expose the members of struct tcp_sock and struct bpf_sock for the bpf_prog to access
+      * Add a new command to bpftool in order to dump a list of eBPF-related parameters for the system (or for a specific network device) to the console
+      * Allow BPF programs access `skb_shared_info->gso_segs` field
+      * Support `__int128`. Previous maximum supported integer bit width is 64. But the __int128 type has been supported by most (if not all) 64bit architectures including bpf for both gcc and clang
+      * Introduce per program stats to monitor the usage BPF
+      * Many algorithms need to read and modify several variables atomically. Until now it was hard to impossible to implement such algorithms in BPF. Hence introduce support for bpf_spin_lock
+      * Add support for queue/stack manipulations
+      * Avoid unloading xdp prog not attached by sample
+      * Add `AF_XDP` support to libbpf. The main reason for this is to facilitate writing applications that use `AF_XDP` by offering higher-level APIs that hide many of the details of the `AF_XDP` uapi
+      * Add btf documentation
+      * Reveal invisible bpf programs. This set catches symbol for all bpf programs loaded/unloaded before/during/after perf-record run `PERF_RECORD_KSYMBOL` and `PERF_RECORD_BPF_EVENT`
+      * tracing: Add some useful new functions to the hist trigger code: a snapshot action and an onchange handler
+    - perf
+      * perf bpf: Automatically add BTF ELF markers to 'perf trace' BPF programs, so that tools such as 'bpftool map dump' can pretty print map keys and values
+      * Add support for annotating BPF programs, using the `PERF_RECORD_BPF_EVENT` and `PERF_RECORD_KSYMBOL` recently added to the kernel and plugging binutils's libopcodes disassembly of BPF programs with the existing annotation interfaces in 'perf annotate', 'perf report' and 'perf top' various output formats (--stdio, --stdio2, --tui)
+      * Add initial BPF map dumper, initially just for the current, minimal needs of the augmented_raw_syscalls BPF example used to collect pointer args payloads that uses BPF maps for pid and syscall filtering, but will in time have features similar to 'perf stat' `--interval-print`, `--interval-clear`, ways to signal from a BPF event that a specific map (or range of that map) should be printed, optionally as a histogram, etc
+  * 9. Architectures
+    - [9.8. RISCV](https://kernelnewbies.org/Linux_5.1#RISCV)
+      * Add BPF JIT for RV64G
+  * 10. Drivers
+    - [10.4. Networking](https://kernelnewbies.org/Linux_5.1#Networking-1)
+      * nfp: bpf: dead code elimination
+
 - KernelNewbies: Linux_5.2
+  * [6. Tracing, perf and BPF](https://kernelnewbies.org/Linux_5.2#Tracing.2C_perf_and_BPF)
+    - BPF
+      * kbuild: add ability to generate BTF type info for vmlinux and kernel modules. The intent is to record compact type information of all types used inside kernel, in order to enables BPF's compile-once-run-everywhere approach, in which tracing programs that are inspecting kernel's internal data can be compiled on a system running some kernel version, but would be possible to run on other kernel versions (and configurations) without recompilation, even if the layout of structs changed and/or some of the fields were added, removed, or renamed
+      * Add global data support for BPF. The kernel has been extended to add proper infrastructure that allows for full .bss/.data/.rodata sections on BPF loader
+      * Add a new program type `BPF_PROG_TYPE_CGROUP_SYSCTL` and attach type `BPF_CGROUP_SYSCTL`. `BPF_CGROUP_SYSCTL` hook is placed before calling to sysctl's proc_handler so that accesses (read/write) to sysctl can be controlled for specific cgroup and either allowed or denied, or traced
+      * New set of arguments to bpf_attr for BPF_PROG_TEST_RUN: `ctx_in/ctx_size_in` - input context and `ctx_out/ctx_size_out` - output context
+      * Add BPF sk local storage. It attempts to make bpf's network programming more intuitive to do (together with memory and performance benefit)
+      * Support variable offset stack access from helpers
+      * BPF tc tunneling: it allows for dynamic tunneling, choosing the tunnel destination and features on-demand
+      * Allow checking SYN cookies from XDP and tc cls act
+      * Extend bpf_skb_adjust_room growth to mark inner MAC header so that L2 encapsulation can be used for tc tunnels
+      * Improve verifier scalability
+      * Add an opt-in interface for tracepoints to expose a writable context to `BPF_PROG_TYPE_RAW_TRACEPOINT_WRITABLE` programs that are attached, while supporting read-only access from existing `BPF_PROG_TYPE_RAW_TRACEPOINT` programs, as well as from non-BPF-based tracepoints
+      * Make bpf_skb_ecn_set_ce callable from `BPF_PROG_TYPE_SCHED_ACT`
+      * Support `BPF_PROG_QUERY` for `BPF_FLOW_DISSECTOR` attach_type
+      * bpftool: Support sysctl hook
+      * Add btf dumping to bpftool
+  * 11. Architectures
+    - [11.5. MIPS](https://kernelnewbies.org/Linux_5.2#MIPS)
+      * eBPF: Provide support for MIPS64R6
+      * eBPF: Initial support for MIPS32 architecture
+
 - KernelNewbies: Linux_5.3
+  * [6. Tracing, perf and BPF](https://kernelnewbies.org/Linux_5.3#Tracing.2C_perf_and_BPF)
+    - BPF
+      * libbpf: Add BTF-to-C dumping support, allowing to output a subset of BTF types as a compilable C type definitions. This is useful by itself, as raw BTF output is not easy to inspect and comprehend. But it's also a big part of BPF CO-RE (compile once - run everywhere) initiative aimed at allowing to write relocatable BPF programs, that won't require on-the-host kernel headers (and would be able to inspect internal kernel structures, not exposed through kernel headers)
+      * Implements initial version (as discussed at LSF/MM2019 conference) of a new way to specify BPF maps, relying on BTF type information, which allows for easy extensibility, preserving forward and backward compatibility
+      * Adds support for propagating congestion notifications to TCP from cgroup inet skb egress BPF programs
+      * Add `SO_DETACH_REUSEPORT_BPF` to detach BPF prog from reuseport sk
+      * Add a sock_ops callback that can be selectively enabled on a socket by socket basis and is executed for every RTT. BPF program frequency can be further controlled by calling bpf_ktime_get_ns and bailing out early
+      * Allow CGROUP_SKB programs to use `bpf_skb_cgroup_id()` helper
+      * Eliminate zero extensions for sub-register writes
+      * Export bpf_sock for `BPF_PROG_TYPE_CGROUP_SOCK_ADDR` prog type and for `BPF_PROG_TYPE_SOCK_OPS` prog type
+      * allow wide (u64) aligned stores for some fields of bpf_sock_addr
+      * Adds support for fq's Earliest Departure Time to HBM (Host Bandwidth Manager)
+      * Introduces verifier support for bounded loops and other improvements
+      * bpf: getsockopt and setsockopt hooks
+      * libbpf: add bpf_link and tracing attach APIs
+  - perf
+    * perf tools: Display eBPF code in intel_pt trace
+    * perf trace: Auto bump rlimit(MEMLOCK) for eBPF maps sake
+
 - KernelNewbies: Linux_5.4
+  * [6. Tracing, perf and BPF](https://kernelnewbies.org/Linux_5.4#Tracing.2C_perf_and_BPF)
+    - BPF
+      * flow_dissector: pass input flags to BPF flow dissector program, so it can customize parsing by either stopping early or trying to parse as deep as possible
+      * xdp: Add devmap_hash map type for looking up devices by hashed index
+      * Add BTF ids in procfs for file descriptors to BTF objects
+      * Add a new command `BPF_BTF_GET_NEXT_ID` to the bpf() system call, and uses it in bpftool as to list all BTF objects (`bpftool btf list`) loaded on the system (and to dump the ids of maps and programs associated with them, if any)
+      * Introduce `BPF_F_TEST_STATE_FREQ` flag to stress test parentage chain and state pruning
+      * Expose BTF info through /sys/kernel/btf. It contains all the BTFs present inside kernel. Currently there is only kernel's main BTF, represented as /sys/kernel/btf/vmlinux file. Once kernel modules' BTFs are supported, each module will expose its BTF as /sys/kernel/btf/<module\-name> file
+      * **Implement the central part of CO-RE (Compile Once - Run Everywhere, an strategy to allow redistributable BPF binaries, see [this](http://vger.kernel.org/bpfconf2019.html#session-2) and [this](http://vger.kernel.org/lpc-bpf2018.html#session-2))**
+      * Introduce a BPF helper to generate SYN cookies
+      * bpftool: add net attach/detach command to attach XDP prog
+      * bpftool: work with frozen maps
+      * bpftool: add support for reporting the effective cgroup progs
+  * 12. Architectures
+    - [12.4. S390](https://kernelnewbies.org/Linux_5.4#S390)
+      * bpf: add JIT support for bpf line info
+
 - KernelNewbies: Linux_5.5
+
 - KernelNewbies: Linux_5.6
+
 - KernelNewbies: Linux_5.7
+
 - KernelNewbies: Linux_5.8
+
 - KernelNewbies: Linux_5.9
+
 - KernelNewbies: Linux_5.10
 
 2015.10 [`ea317b2`](https://github.com/torvalds/linux/commit/ea317b267e9d03a8241893aa176fba7661d07579) bpf: Add new bpf map type to store the pointer to struct perf_event
