@@ -2,7 +2,7 @@
 title: eBPF
 description: 
 published: true
-date: 2020-12-19T09:09:39.263Z
+date: 2020-12-20T07:49:48.640Z
 tags: 
 editor: markdown
 dateCreated: 2020-12-17T15:36:22.454Z
@@ -44,6 +44,8 @@ dateCreated: 2020-12-17T15:36:22.454Z
 2015.06 [`ffeedaf`](https://github.com/torvalds/linux/commit/ffeedafbf0236f03aeb2e8db273b3e5ae5f5bc89) bpf: introduce current->pid, tgid, uid, gid, comm accessors
 
 2015.08 [`04a22fa`](https://github.com/torvalds/linux/commit/04a22fae4cbc1f7d3f7471e9b36359f98bd3f043) tracing, perf: Implement BPF programs attached to uprobes
+
+2017.06 [`f91840a`](https://github.com/torvalds/linux/commit/f91840a32deef5cb1bf73338bc5010f843b01426) perf, bpf: Add BPF support to all perf_event types
 
 ### libbpf source
 
