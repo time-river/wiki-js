@@ -2,7 +2,7 @@
 title: eBPF
 description: 
 published: true
-date: 2020-12-20T11:23:20.457Z
+date: 2020-12-20T11:37:09.043Z
 tags: 
 editor: markdown
 dateCreated: 2020-12-17T15:36:22.454Z
@@ -478,6 +478,33 @@ dateCreated: 2020-12-17T15:36:22.454Z
       * bpf: add JIT support for bpf line info
 
 - KernelNewbies: Linux_5.5
+  * 1. Coolest features
+    - [BPF improvements: type checking and BPF Trampoline](https://kernelnewbies.org/Linux_5.5#BPF_improvements:_type_checking_and_BPF_Trampoline)
+      - [LWN.net: Type checking for BPF tracing](https://lwn.net/Articles/803258/)
+  * [6. Tracing, perf and BPF](https://kernelnewbies.org/Linux_5.5#Tracing.2C_perf_and_BPF)
+    - BPF
+      * **(FEATURED) Revolutionize BPF tracing and BPF C programming: With introduction of Compile Once Run Everywhere technology in libbpf and in LLVM and BPF Type Format (BTF) the verifier is finally ready for the next step in program verification. Now it can use in-kernel BTF to type check bpf assembly code. The end result is safer and faster bpf tracing.**
+      * (FEATURED) Introduce BPF trampoline to allow kernel code to call into BPF programs with practically zero overhead
+      * Add support for memory-mapping BPF array maps
+      * Optimize BPF tail calls for direct jumps
+      * Add `probe_read_user`, `probe_read_kernel` and `probe_read_user_str`, `probe_read_kernel_str` helpers
+      * bpftool: Allow to read btf as raw data commit
+      * flow_dissector: add mode to enforce global BPF flow dissector
+    - libbpf
+      * Make bpf_helpers.h and bpf_endian.h a part of libbpf itself for consumption by user BPF programs, and add BPF_CORE_READ macros
+      * Add `bpf_object__open_file()` and `bpf_object__open_mem()` APIs that use a new approach to providing future-proof non-ABI-breaking API changes
+      * Bitfield and size relocations support
+      * **Generalize libbpf's CO-RE relocation support. In addition to existing field's byte offset relocation, libbpf now supports field existence relocations, which are emitted by Clang**
+      * Teach `bpf_object__open()` (and its variants) to automatically derive BPF program type/expected attach type from section names, similarly to how bpf_prog_load() was doing it
+      * Add support for reading 'pinning' settings from BTF-based map definitions. It introduces a new open option which can set the pinning path; if no path is set, /sys/fs/bpf is used as the default. Callers can customise the pinning between open and load by setting the pin path per map, and still get the automatic reuse feature
+      * Extend libbpf to support shared umems and Rx|Tx-only sockets 
+    - perf
+      * tools: Allow to link with libbpf dynamicaly
+  * 11. Architectures
+    - [11.4. MIPS](https://kernelnewbies.org/Linux_5.5#MIPS)
+      * BPF: Disable MIPS32 eBPF JIT
+    - [11.9. UML](https://kernelnewbies.org/Linux_5.5#UML)
+      * Loadable BPF "Firmware" for vector drivers
 
 - KernelNewbies: Linux_5.6
 
