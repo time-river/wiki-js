@@ -2,7 +2,7 @@
 title: Home
 description: 
 published: true
-date: 2020-12-17T15:34:28.497Z
+date: 2021-02-14T06:36:59.191Z
 tags: 
 editor: markdown
 dateCreated: 2020-10-05T10:34:30.184Z
@@ -34,7 +34,11 @@ dateCreated: 2020-10-05T10:34:30.184Z
 
 ## Linux
 
-[eBPF](eBPF)
+- [如何快速定位 Linux Panic 出错的代码行](http://tinylab.org/find-out-the-code-line-of-kernel-panic-address/)
+- [What is the difference between ttys0, ttyUSB0 and ttyAMA0 in Linux?](https://unix.stackexchange.com/questions/307390/what-is-the-difference-between-ttys0-ttyusb0-and-ttyama0-in-linux/307394)
+- [Linux: Difference between /dev/console , /dev/tty and /dev/tty0](https://unix.stackexchange.com/questions/60641/linux-difference-between-dev-console-dev-tty-and-dev-tty0#:~:text=%2Fdev%2Ftty%5B0%2D,the%20process%20that%20open%20it.)
+- [What is the difference between the following kernel Makefile terms: vmLinux, vmlinuz, vmlinux.bin, zimage & bzimage?](https://unix.stackexchange.com/questions/5518/what-is-the-difference-between-the-following-kernel-makefile-terms-vmlinux-vml)
+- [eBPF](eBPF)
 
 ## Archieve
 
