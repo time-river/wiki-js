@@ -2,7 +2,7 @@
 title: eBPF
 description: 
 published: true
-date: 2021-02-21T09:46:49.320Z
+date: 2021-02-21T09:55:16.118Z
 tags: 
 editor: markdown
 dateCreated: 2020-12-17T15:36:22.454Z
@@ -10,7 +10,17 @@ dateCreated: 2020-12-17T15:36:22.454Z
 
 # eBPF
 
-- [ebpf.io](http://ebpf.io/)
+- docs:
+  * [ebpf.io](http://ebpf.io/)
+  * [iovisor: bpf-docs](https://github.com/iovisor/bpf-docs)
+  * [cilium docs](https://docs.cilium.io)
+  
+- projects:
+  * [IO Visor project](https://github.com/iovisor)
+  * [libbpf](https://github.com/libbpf)
+  * [XDP project](https://github.com/xdp-project)
+  * [Cilium](https://github.com/cilium)
+
 - [Linux doc: BPF ring buffer](https://www.kernel.org/doc/html/latest/bpf/ringbuf.html)
 - [LWN.net: Kernel operations structures in BPF](https://lwn.net/Articles/811631/)
 - [Andrii Nakryiko's Blog](https://nakryiko.com/)
