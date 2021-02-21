@@ -2,7 +2,7 @@
 title: eBPF
 description: 
 published: true
-date: 2021-02-21T09:55:16.118Z
+date: 2021-02-21T09:59:25.537Z
 tags: 
 editor: markdown
 dateCreated: 2020-12-17T15:36:22.454Z
@@ -14,6 +14,8 @@ dateCreated: 2020-12-17T15:36:22.454Z
   * [ebpf.io](http://ebpf.io/)
   * [iovisor: bpf-docs](https://github.com/iovisor/bpf-docs)
   * [cilium docs](https://docs.cilium.io)
+  * [awesome-ebf](https://github.com/zoidbergwill/awesome-ebpf)
+  * [BPF Features by Linux Kernel Version](https://github.com/iovisor/bcc/blob/master/docs/kernel-versions.md)
   
 - projects:
   * [IO Visor project](https://github.com/iovisor)
