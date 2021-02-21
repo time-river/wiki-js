@@ -2,7 +2,7 @@
 title: eBPF
 description: 
 published: true
-date: 2020-12-20T11:41:35.505Z
+date: 2021-02-21T09:46:49.320Z
 tags: 
 editor: markdown
 dateCreated: 2020-12-17T15:36:22.454Z
@@ -10,9 +10,11 @@ dateCreated: 2020-12-17T15:36:22.454Z
 
 # eBPF
 
-[ebpf.io](http://ebpf.io/)
-[Linux doc: BPF ring buffer](https://www.kernel.org/doc/html/latest/bpf/ringbuf.html)
-[LWN.net: Kernel operations structures in BPF](https://lwn.net/Articles/811631/)
+- [ebpf.io](http://ebpf.io/)
+- [Linux doc: BPF ring buffer](https://www.kernel.org/doc/html/latest/bpf/ringbuf.html)
+- [LWN.net: Kernel operations structures in BPF](https://lwn.net/Articles/811631/)
+- [Andrii Nakryiko's Blog](https://nakryiko.com/)
+- [bpf ringbuf and perf examples](https://github.com/anakryiko/bpf-ringbuf-examples)
 
 ## Usage Question
 
