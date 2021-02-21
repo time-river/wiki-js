@@ -2,7 +2,7 @@
 title: Home
 description: 
 published: true
-date: 2021-02-14T06:36:59.191Z
+date: 2021-02-21T10:04:32.621Z
 tags: 
 editor: markdown
 dateCreated: 2020-10-05T10:34:30.184Z
@@ -39,6 +39,8 @@ dateCreated: 2020-10-05T10:34:30.184Z
 - [Linux: Difference between /dev/console , /dev/tty and /dev/tty0](https://unix.stackexchange.com/questions/60641/linux-difference-between-dev-console-dev-tty-and-dev-tty0#:~:text=%2Fdev%2Ftty%5B0%2D,the%20process%20that%20open%20it.)
 - [What is the difference between the following kernel Makefile terms: vmLinux, vmlinuz, vmlinux.bin, zimage & bzimage?](https://unix.stackexchange.com/questions/5518/what-is-the-difference-between-the-following-kernel-makefile-terms-vmlinux-vml)
 - [eBPF](eBPF)
+- [ACPI](http://reader.epubee.com/books/mobile/94/94e6b6332e45c4c4b837e5067b0488b8/text00004.html)
+- [Linux Insides](https://0xax.gitbooks.io/linux-insides/content/)
 
 ## Archieve
 
