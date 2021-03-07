@@ -2,7 +2,7 @@
 title: Home
 description: 
 published: true
-date: 2021-02-25T05:05:58.415Z
+date: 2021-03-07T15:10:38.015Z
 tags: 
 editor: markdown
 dateCreated: 2020-10-05T10:34:30.184Z
@@ -13,6 +13,8 @@ dateCreated: 2020-10-05T10:34:30.184Z
 > GitHub repo: [wiki-js](https://github.com/time-river/wiki-js)
 > site: [https://wiki.home.vvl.me:10443](https://wiki.home.vvl.me:10443)
 > mirror site: [https://wiki.vvl.me](https://wiki.vvl.me)
+
+[Notes](notes)
 
 ## 网络
 
