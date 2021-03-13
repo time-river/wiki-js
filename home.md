@@ -2,7 +2,7 @@
 title: Home
 description: 
 published: true
-date: 2021-03-07T15:10:38.015Z
+date: 2021-03-13T11:13:32.964Z
 tags: 
 editor: markdown
 dateCreated: 2020-10-05T10:34:30.184Z
@@ -34,6 +34,10 @@ dateCreated: 2020-10-05T10:34:30.184Z
 
 - [go](programming-language/go)
 - [assembly](programming-language/assembly)
+
+## Arch
+
+- [x86 irq](irq-in-x86)
 
 ## Linux
 
