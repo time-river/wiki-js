@@ -2,7 +2,7 @@
 title: irq in x86
 description: 
 published: true
-date: 2021-03-13T11:32:22.465Z
+date: 2021-03-13T11:34:56.531Z
 tags: 
 editor: markdown
 dateCreated: 2021-03-13T11:17:23.145Z
