@@ -2,7 +2,7 @@
 title: irq in x86
 description: 
 published: true
-date: 2021-03-13T11:42:34.954Z
+date: 2021-03-13T11:46:14.457Z
 tags: 
 editor: markdown
 dateCreated: 2021-03-13T11:17:23.145Z
@@ -25,3 +25,8 @@ dateCreated: 2021-03-13T11:17:23.145Z
 [qemu monitor](https://qemu.readthedocs.io/en/latest/system/monitor.html)
 
 [qemu kvm终端虚拟化](https://luohao-brian.gitbooks.io/interrupt-virtualization/content/qemu-kvm-zhong-duan-xu-ni-hua-kuang-jia-fen-679028-4e0a29.html)
+
+
+[从机器码理解RIP 相对寻址](https://www.cnblogs.com/papertree/p/6298763.html)
+[i386 relocatable内核实现](https://www.cnblogs.com/tsecer/p/10485826.html)
+[KASLR](http://www.wowotech.net/memory_management/441.html)
